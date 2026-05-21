@@ -16,8 +16,9 @@ app.use('/api/invoice', invoiceRoutes);
 app.use('/api/order', orderRoutes);
 app.use('/api/payment', paymentRoutes);
 
-// منفذ التشغيل
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server is running successfully on port ${PORT}`);
+app.get('/', (req, res) => {
+  res.json({
+    success: true,
+    message: "Welcome to Quick Bite Restaurant API! Server is running successfully."
+  });
 });
